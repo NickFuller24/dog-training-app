@@ -16,6 +16,6 @@
 
     `npm install`
     
-5. You're ready to go! To test, run the app:
+5. You're ready to go! To test, run the app (if you don't have Expo Go installed on your phone, you might want it to easily test the app on your actual device):
 
     `expo start`
