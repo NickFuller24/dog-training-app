@@ -6,7 +6,7 @@
 
 2. Create a new branch inserting your last name instead of my last name (fuller):
 
-    git checkout -b personal/fuller
+    `git checkout -b personal/fuller`
 
 3. Navigate into the dog_training_app folder with the following command:
 
