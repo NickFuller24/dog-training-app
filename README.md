@@ -10,12 +10,12 @@
 
 3. Navigate into the dog_training_app folder with the following command:
 
-    cd dog_training_app
+    `cd dog_training_app`
     
 4. Install all of the necessary dependencies:
 
-    npm install
+    `npm install`
     
 5. You're ready to go! To test, run the app:
 
-    expo start
+    `expo start`
