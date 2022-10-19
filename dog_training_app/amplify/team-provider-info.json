@@ -1,0 +1,20 @@
+{
+  "staging": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-dogtrainingauthentic-staging-201634-authRole",
+      "UnauthRoleArn": "arn:aws:iam::213257227805:role/amplify-dogtrainingauthentic-staging-201634-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::213257227805:role/amplify-dogtrainingauthentic-staging-201634-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-dogtrainingauthentic-staging-201634-deployment",
+      "UnauthRoleName": "amplify-dogtrainingauthentic-staging-201634-unauthRole",
+      "StackName": "amplify-dogtrainingauthentic-staging-201634",
+      "StackId": "arn:aws:cloudformation:us-east-1:213257227805:stack/amplify-dogtrainingauthentic-staging-201634/98b34f10-4e58-11ed-992c-0a4ef95939fb",
+      "AmplifyAppId": "d1ygst3ith325n"
+    },
+    "categories": {
+      "auth": {
+        "DogTrainingAuthentication": {}
+      }
+    }
+  }
+}
