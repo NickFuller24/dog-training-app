@@ -1,45 +1,50 @@
-import { StyleSheet } from 'react-native';
+import { StyleSheet, Dimensions } from 'react-native';
+import { scale, moderateScale, verticalScale } from './scaling';
 
 const styles = StyleSheet.create({
     background: {
-        justifyContent: 'center',
-        alignItems: 'center'
+        justifyContent: 'flex-start',
+        alignItems: 'center',
+        flex: 1
     },
     buttonContainer: {
-        top: 350,
+        top: verticalScale(250),
         width: '80%',
-        height: '25%',
-        justifyContent: 'center'
+        height: verticalScale(150),
+        justifyContent: 'center',
     },
     buttonText: {
         color: 'white',
         textAlign: 'center',
         fontWeight: 'bold',
-        fontSize: 22,
-        top: 10
+        fontSize: scale(23),
+        top: verticalScale(10)
     },
     buttonSpace: {
-        width: 20,
-        height: 20
+        width: '100%',
+        height: verticalScale(25)
     },
     loginButton: {
         width: '100%',
-        height: 50,
-        backgroundColor: "#fc5c65"
+        height: verticalScale(50),
+        backgroundColor: "pink",
     },
-    logo: {
-        width: 200,
-        height: 200
+    logoImage: {
+        width: scale(160),
+        height: verticalScale(150),
     },
     logoContainer: {
         position: 'absolute',
-        top: 50,
-        alignItems: "center"
+        top: verticalScale(40),
+        alignItems: "center",
+    },
+    logoText: {
+        fontSize: scale(15),
     },
     registerButton: {
         width: '100%',
-        height: 50,
-        backgroundColor: "#4ecdc4"
+        height: verticalScale(50),
+        backgroundColor: "#4ecdc4",
     }
 })
 

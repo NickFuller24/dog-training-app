@@ -18,45 +18,6 @@ const styles = StyleSheet.create({
         width: '100%',
         height: verticalScale(25)
     },
-    loginInfoContainer: {
-        top: verticalScale(220),
-        width: '80%'
-    },
-    loginInfoDetailsContainer: {
-        flexDirection: 'row',
-        width: '100%',
-        top: verticalScale(40),
-        justifyContent: 'space-between',
-    },
-    loginInfoDetailsRememberMe: {
-        flex: 1,
-        paddingHorizontal: '3%',
-    },
-    loginInfoDetailsRememberMeCheckbox: {
-        width: '3%',
-        height: verticalScale(8),
-        borderWidth: 1,
-        top: verticalScale(3),
-        backgroundColor: 'blue'
-    },
-    loginInfoDetailsForgotPassword: {
-    },
-    loginError: {
-        color: 'red',
-        height: verticalScale(30),
-    },
-    loginUsernameTextInput: {
-        height: verticalScale(20),
-        borderBottomWidth: '1%',
-        top: verticalScale(10),
-        fontSize: scale(20)
-    },
-    loginPasswordTextInput: {
-        height: verticalScale(20),
-        borderBottomWidth: '1%',
-        top: verticalScale(30),
-        fontSize: scale(20)
-    },
     logoImage: {
         width: scale(160),
         height: verticalScale(150),
@@ -69,29 +30,72 @@ const styles = StyleSheet.create({
     logoText: {
         fontSize: scale(15),
     },
-    signInGeneric: {
+    signUpFullnameTextInput: {
+        height: verticalScale(20),
+        borderBottomWidth: '1%',
+        top: verticalScale(10),
+        fontSize: scale(20)
+    },
+    signUpGeneric: {
         width: '100%',
         height: verticalScale(50),
         backgroundColor: "red",
         top: verticalScale(30)
     },
-    signInWithContainer: {
-        top: verticalScale(450),
+    signUpInfoContainer: {
+        top: verticalScale(220),
+        width: '80%'
+    },
+    signUpPasswordTextInput: {
+        height: verticalScale(20),
+        borderBottomWidth: '1%',
+        top: verticalScale(30),
+        fontSize: scale(20)
+    },
+    signUpUserButton: {
+        width: scale(50),
+    },
+    signUpUserButtonText: {
+        fontSize: scale(15),
+        color: 'black',
+    },
+    signUpTrainerButton: {
+        width: scale(50),
+    },
+    signUpTrainerButtonText: {
+        fontSize: scale(15),
+        color: 'black'
+    },
+    signUpUsernameTextInput: {
+        height: verticalScale(20),
+        borderBottomWidth: '1%',
+        top: verticalScale(20),
+        fontSize: scale(20)
+    },
+    signUpUserTrainerContainer: {
+        top: verticalScale(20),
+        width: '100%',
+        height: verticalScale(40),
+        justifyContent: 'center',
+        flexDirection: 'row'
+    },
+    signUpWithContainer: {
+        top: verticalScale(460),
         width: '80%',
         height: verticalScale(100),
         justifyContent: 'center',
         position: 'absolute'
     },
-    signInWithFacebook: {
+    signUpWithFacebook: {
         width: '100%',
         height: verticalScale(50),
         backgroundColor: "blue"
     },
-    signInWithGoogle: {
+    signUpWithGoogle: {
         width: '100%',
         height: verticalScale(50),
         backgroundColor: "green"
-    }
+    },
 })
 
 export default styles;

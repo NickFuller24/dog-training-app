@@ -1,23 +1,35 @@
 import { ConsoleLogger } from '@aws-amplify/core';
 import React, { useState } from 'react';
-import { View, Image, Text, Pressable, TextInput } from 'react-native';
+import { View, Image, Text, Pressable, TextInput, KeyboardAvoidingView } from 'react-native';
 import styles from '../styles/SignInScreenStyles.js';
 
 function SignInScreen({navigation}: {navigation: any}) {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
+    const [showLoginError, setShowLoginError] = useState(false);
+    const [rememberMeClicked, setRememberMeClicked] = useState(false);
     return (
-        <View
+        <KeyboardAvoidingView
         style={styles.background} >
             <View 
             style={styles.logoContainer}>
                 <Image 
-                style={styles.logo}
-                source={require("../assets/loginDogImage.png")}/>
-                    <Text>Train your dog!</Text>
+                style={styles.logoImage}
+                source={require('../assets/loginDogImage.png')}/>
+                <Text
+                style={styles.logoText}>
+                    Train your dog!
+                </Text>
             </View>
             <View
             style={styles.loginInfoContainer}>
+                {
+                    showLoginError? (
+                <Text
+                style={styles.loginError}>
+                    Your username or password is incorrect. Please try again.
+                </Text>) : null
+                }
                 <TextInput
                 style={styles.loginUsernameTextInput}
                 placeholder={"Username"}
@@ -31,9 +43,11 @@ function SignInScreen({navigation}: {navigation: any}) {
                 <View
                 style={styles.loginInfoDetailsContainer}>
                     <Pressable
-                    style={styles.loginInfoDetailsRememberMeCheckbox}/>
+                    style={[styles.loginInfoDetailsRememberMeCheckbox, rememberMeClicked? {backgroundColor: 'blue'} : {backgroundColor: 'transparent'}]}
+                    onPress={() => setRememberMeClicked(!rememberMeClicked)}/>
                     <Pressable
-                    style={styles.loginInfoDetailsRememberMe}>
+                    style={styles.loginInfoDetailsRememberMe}
+                    onPress={() => setRememberMeClicked(!rememberMeClicked)}>
                         <Text>Remember Me</Text>
                     </Pressable>
                     <Pressable
@@ -43,7 +57,10 @@ function SignInScreen({navigation}: {navigation: any}) {
                 </View>
                 <View style={styles.buttonSpace}/>
                 <Pressable
-                style={styles.signInGeneric}>
+                style={styles.signInGeneric}
+                // ***Where authentication comes in, on this onPress. Check user info with database***
+                //onPress={() => setShowLoginError(!showLoginError)}
+                >
                     <Text
                     style={styles.buttonText}>
                         Sign In
@@ -53,7 +70,7 @@ function SignInScreen({navigation}: {navigation: any}) {
             <View 
             style={styles.signInWithContainer}>
                 <Pressable 
-                style={styles.signInWithFacebook} >
+                style={styles.signInWithFacebook}>
                     <Text
                     style={styles.buttonText}>
                         Sign In With Facebook
@@ -62,14 +79,14 @@ function SignInScreen({navigation}: {navigation: any}) {
                 <View
                 style={styles.buttonSpace} />
                 <Pressable
-                style={styles.signInWithGoogle} >
+                style={styles.signInWithGoogle}>
                     <Text
                     style={styles.buttonText}>
                         Sign In With Google
                     </Text>
                 </Pressable>
             </View>
-        </View>
+        </KeyboardAvoidingView>
     );
 }
 

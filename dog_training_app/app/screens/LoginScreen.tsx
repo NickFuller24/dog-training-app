@@ -8,26 +8,31 @@ function LoginScreen({navigation}: {navigation: any}) {
         <View
         style={styles.background} >
             <View 
-                style={styles.logoContainer}>
-                <Image style={styles.logo} source={require("../assets/loginDogImage.png")}/>
-                <Text>Train your dog!</Text>
+            style={styles.logoContainer}>
+                <Image style={styles.logoImage} source={require("../assets/loginDogImage.png")}/>
+                <Text
+                style={styles.logoText}>
+                    Train your dog!
+                </Text>
             </View>
             <View 
-                style={styles.buttonContainer}>
+            style={styles.buttonContainer}>
                 <Pressable 
-                    style={styles.loginButton}
-                    onPress={() => navigation.navigate('Sign In')} >
+                style={styles.loginButton}
+                onPress={() => navigation.navigate('Sign In')} >
                     <Text
-                        style={styles.buttonText}>
-                    Sign In</Text>
+                    style={styles.buttonText}>
+                        Sign In
+                    </Text>
                 </Pressable>
                 <View style={styles.buttonSpace} />
                 <Pressable
-                    style={styles.registerButton}
-                    onPress={() => navigation.navigate('Register')} >
+                style={styles.registerButton}
+                onPress={() => navigation.navigate('Create Account')} >
                     <Text
-                        style={styles.buttonText}>
-                    Register</Text>
+                    style={styles.buttonText}>
+                        Register
+                    </Text>
                 </Pressable>
             </View>
         </View>
