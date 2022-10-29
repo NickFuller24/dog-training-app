@@ -39,8 +39,6 @@ function CreateAccountScreen({navigation}: {navigation: any}) {
                 onChangeText={password => setPassword(password)}>
                 </TextInput>
                 <View style={styles.buttonSpace}/>
-
-
                 <View
                 style={styles.signUpUserTrainerContainer}>
                     <Pressable
@@ -60,8 +58,6 @@ function CreateAccountScreen({navigation}: {navigation: any}) {
                         </Text>
                     </Pressable>
                 </View>
-
-
                 <Pressable
                 style={styles.signUpGeneric}
                 // ***Where authentication comes in, on this onPress. Check user data / register account***

@@ -60,6 +60,7 @@ function SignInScreen({navigation}: {navigation: any}) {
                 style={styles.signInGeneric}
                 // ***Where authentication comes in, on this onPress. Check user info with database***
                 //onPress={() => setShowLoginError(!showLoginError)}
+                onPress={() => navigation.navigate('Home')}
                 >
                     <Text
                     style={styles.buttonText}>

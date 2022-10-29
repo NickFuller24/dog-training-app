@@ -44,7 +44,7 @@ const styles = StyleSheet.create({
     registerButton: {
         width: '100%',
         height: verticalScale(50),
-        backgroundColor: "#4ecdc4",
+        backgroundColor: "#FDB156",
     }
 })
 
