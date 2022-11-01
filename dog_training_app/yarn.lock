@@ -3591,6 +3591,11 @@
   dependencies:
     merge-options "^3.0.4"
 
+"@react-native-community/checkbox@^0.5.12":
+  version "0.5.12"
+  resolved "https://registry.yarnpkg.com/@react-native-community/checkbox/-/checkbox-0.5.12.tgz#1f55a38bbcd5f10ca853db0c6a9f1c4beccc37af"
+  integrity sha512-Dd3eiAW7AkpRgndwKGdgQ6nNgEmZlVD8+KAOBqwjuZQ/M67BThXJ9Ni+ydpPjNm4e28KXmIILfkvhcDt0ZoFTQ==
+
 "@react-native-community/cli-clean@^8.0.4":
   version "8.0.4"
   resolved "https://registry.yarnpkg.com/@react-native-community/cli-clean/-/cli-clean-8.0.4.tgz#97e16a20e207b95de12e29b03816e8f2b2c80cc7"
@@ -3761,15 +3766,15 @@
     prompts "^2.4.0"
     semver "^6.3.0"
 
-"@react-native-community/netinfo@9.3.0":
-  version "9.3.0"
-  resolved "https://registry.yarnpkg.com/@react-native-community/netinfo/-/netinfo-9.3.0.tgz#9792c23341eab5c629566baee016146f4f3f6086"
-  integrity sha512-NNdMeIXXqmPCbXrWxVqRzZ1gEZ6L1ykotWnCZLVjQBUgjyGWdL5LiDM/bcIa5DLzqZY7Km08rMgB7BoHUuEmnQ==
+"@react-native-community/netinfo@^9.3.5":
+  version "9.3.6"
+  resolved "https://registry.yarnpkg.com/@react-native-community/netinfo/-/netinfo-9.3.6.tgz#730de4ebf83f7263fa61b0cbec6cde9b28660077"
+  integrity sha512-SwbBnHZuXcCUpYdL6ebt4HPAZEugPASl+RPxIyNe91Y+boZptzAFLywYW6yU93DYAhiHHFQBL6x6LxwF/K/tOQ==
 
-"@react-native-picker/picker@2.4.2":
-  version "2.4.2"
-  resolved "https://registry.yarnpkg.com/@react-native-picker/picker/-/picker-2.4.2.tgz#2925eb8e76ff6b584c80529adc251df963be9141"
-  integrity sha512-0nY8638h1J3wKz6P3IJMpOoxJDdOj7Dk/K2hP/xpqP3KnIY0lmoqYlhyNihuyVPocDGajf6SA7LFFsFepQ56ag==
+"@react-native-picker/picker@^2.4.8":
+  version "2.4.8"
+  resolved "https://registry.yarnpkg.com/@react-native-picker/picker/-/picker-2.4.8.tgz#a1a21f3d6ecadedbc3f0b691a444ddd7baa081f8"
+  integrity sha512-5NQ5XPo1B03YNqKFrV6h9L3CQaHlB80wd4ETHUEABRP2iLh7FHLVObX2GfziD+K/VJb8G4KZcZ23NFBFP1f7bg==
 
 "@react-native/assets@1.0.0":
   version "1.0.0"
