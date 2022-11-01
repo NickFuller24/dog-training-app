@@ -15,23 +15,29 @@ function HomeScreen({navigation}: {navigation: any}) {
                 >
                     <TouchableOpacity
                     style={styles.navBarContainerButton}>
-                        <Image source={require('../assets/favicon.png')}/>
+                        <Image source={require('../assets/image 9.png')}
+                        style={{backgroundColor: 'yellow'}}/>
                     </TouchableOpacity>
                     <TouchableOpacity
                     style={styles.navBarContainerButton}>
-                        <Image source={require('../assets/favicon.png')}/>
+                        <Image source={require('../assets/image 10.png')}
+                        style={{backgroundColor: 'orange'}}/>
+                    </TouchableOpacity>
+                    <TouchableOpacity
+                    onPress={() => navigation.navigate('Search New Service')}
+                    style={styles.navBarContainerButton}>
+                        <Image source={require('../assets/image 13.png')}
+                        style={{backgroundColor: 'white'}}/>
                     </TouchableOpacity>
                     <TouchableOpacity
                     style={styles.navBarContainerButton}>
-                        <Image source={require('../assets/favicon.png')}/>
+                        <Image source={require('../assets/image 11.png')}
+                        style={{backgroundColor: 'pink'}}/>
                     </TouchableOpacity>
                     <TouchableOpacity
                     style={styles.navBarContainerButton}>
-                        <Image source={require('../assets/favicon.png')}/>
-                    </TouchableOpacity>
-                    <TouchableOpacity
-                    style={styles.navBarContainerButton}>
-                        <Image source={require('../assets/favicon.png')}/>
+                        <Image source={require('../assets/image 12.png')}
+                        style={{backgroundColor: 'red'}}/>
                     </TouchableOpacity>
                 </View>
             </SafeAreaView>

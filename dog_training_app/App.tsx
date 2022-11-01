@@ -6,7 +6,9 @@ import LoginScreen from './app/screens/LoginScreen';
 import CreateAccountScreen from './app/screens/CreateAccountScreen';
 import SignInScreen from './app/screens/SignInScreen';
 import SearchNewServiceScreen from './app/screens/SearchNewServiceScreen';
+import SearchNewServiceDateScreen from './app/screens/SearchNewServiceDateScreen';
 import HomeScreen from './app/screens/HomeScreen';
+import VendorListScreen from './app/screens/vendorListScreen';
 
 
 // Create navigation stack
@@ -21,6 +23,8 @@ const App = () => {
         <Stack.Screen name="Create Account" component={CreateAccountScreen} options={{headerShown: true}}/>
         <Stack.Screen name="Home" component={HomeScreen} options={{headerShown: false}}/>
         <Stack.Screen name="Search New Service" component={SearchNewServiceScreen} options={{headerShown: false}}/>
+        <Stack.Screen name="Search New Service Date" component={SearchNewServiceDateScreen} options={{headerShown: false}}/>
+        <Stack.Screen name="Vendor List" component={VendorListScreen} options={{headerShown: false}}/>
       </Stack.Navigator>
     </NavigationContainer>
   )

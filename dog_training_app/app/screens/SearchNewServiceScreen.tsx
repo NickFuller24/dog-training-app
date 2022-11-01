@@ -31,6 +31,7 @@ function SearchNewServiceScreen({navigation}: {navigation: any}) {
                 <View style={styles.triggerSelectionSpace}/>
                 <TouchableOpacity
                 // "Other Dogs" trigger button
+                onPress={() => navigation.navigate('Search New Service Date', {triggers: 'Other Dogs'})}
                 style={styles.triggerSelectionItem}>
                     <View
                     style={styles.triggerSelectionItemContent}>
@@ -46,6 +47,7 @@ function SearchNewServiceScreen({navigation}: {navigation: any}) {
                 <View style={styles.triggerSelectionSpace}/>
                 <TouchableOpacity
                 // "Cars" trigger button
+                onPress={() => navigation.navigate('Search New Service Date', {triggers: 'Cars'})}
                 style={styles.triggerSelectionItem}>
                     <View
                     style={styles.triggerSelectionItemContent}>
@@ -61,6 +63,7 @@ function SearchNewServiceScreen({navigation}: {navigation: any}) {
                 <View style={styles.triggerSelectionSpace}/>
                 <TouchableOpacity
                 // "Skateboards" trigger button
+                onPress={() => navigation.navigate('Search New Service Date', {triggers: 'Skateboards'})}
                 style={styles.triggerSelectionItem}>
                     <View
                     style={styles.triggerSelectionItemContent}>
@@ -76,6 +79,7 @@ function SearchNewServiceScreen({navigation}: {navigation: any}) {
                 <View style={styles.triggerSelectionSpace}/>
                 <TouchableOpacity
                 // "Bicycles" trigger button
+                onPress={() => navigation.navigate('Search New Service Date', {triggers: 'Bicycles'})}
                 style={styles.triggerSelectionItem}>
                     <View
                     style={styles.triggerSelectionItemContent}>
@@ -91,6 +95,7 @@ function SearchNewServiceScreen({navigation}: {navigation: any}) {
                 <View style={styles.triggerSelectionSpace}/>
                 <TouchableOpacity
                 // "More" trigger button
+                onPress={() => navigation.navigate('Search New Service Date', {triggers: 'More'})}
                 style={styles.triggerSelectionItem}>
                     <View
                     style={styles.triggerSelectionItemContent}>

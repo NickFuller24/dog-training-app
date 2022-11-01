@@ -18,7 +18,6 @@ const styles = StyleSheet.create({
         borderRadius: 20,
         flexDirection: 'row',
         height: verticalScale(70),
-        //top: verticalScale(30),
     },
     triggerSelectionItemContent: {
         alignSelf: 'center',
