@@ -31,7 +31,7 @@ function LoginScreen({navigation}: {navigation: any}) {
                 onPress={() => navigation.navigate('Create Account')} >
                     <Text
                     style={styles.buttonText}>
-                        Register
+                        Create an Account
                     </Text>
                 </Pressable>
             </View>
