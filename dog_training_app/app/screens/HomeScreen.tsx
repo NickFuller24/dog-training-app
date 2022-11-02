@@ -15,28 +15,29 @@ function HomeScreen({navigation}: {navigation: any}) {
                 >
                     <TouchableOpacity
                     style={styles.navBarContainerButton}>
-                        <Image source={require('../assets/image 9.png')}
+                        <Image source={require('../assets/homeIcon.png')}
                         style={{backgroundColor: 'yellow'}}/>
                     </TouchableOpacity>
                     <TouchableOpacity
                     style={styles.navBarContainerButton}>
-                        <Image source={require('../assets/image 10.png')}
+                        <Image source={require('../assets/calendarIcon.png')}
                         style={{backgroundColor: 'orange'}}/>
                     </TouchableOpacity>
                     <TouchableOpacity
                     onPress={() => navigation.navigate('Search New Service')}
                     style={styles.navBarContainerButton}>
-                        <Image source={require('../assets/image 13.png')}
+                        <Image source={require('../assets/plusIcon.png')}
                         style={{backgroundColor: 'white'}}/>
                     </TouchableOpacity>
                     <TouchableOpacity
                     style={styles.navBarContainerButton}>
-                        <Image source={require('../assets/image 11.png')}
+                        <Image source={require('../assets/chatIcon.png')}
                         style={{backgroundColor: 'pink'}}/>
                     </TouchableOpacity>
                     <TouchableOpacity
-                    style={styles.navBarContainerButton}>
-                        <Image source={require('../assets/image 12.png')}
+                    style={styles.navBarContainerButton}
+                    onPress={() => navigation.navigate('Profile')}>
+                        <Image source={require('../assets/profileIcon.png')}
                         style={{backgroundColor: 'red'}}/>
                     </TouchableOpacity>
                 </View>

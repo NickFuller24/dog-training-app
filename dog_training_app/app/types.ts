@@ -11,7 +11,7 @@ export type User = {
     dogs: Dog[],
     other: Animal[] // will probably have to be a union of other animal types (cat, etc.)
   },                // but all I can think of are cats at the moment...
-  vendor: {
+  vendor?: {
     triggers: Triggers[],
     reviews: Review[]
   }

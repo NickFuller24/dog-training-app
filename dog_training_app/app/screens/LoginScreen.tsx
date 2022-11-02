@@ -26,6 +26,15 @@ function LoginScreen({navigation}: {navigation: any}) {
                     </Text>
                 </Pressable>
                 <View style={styles.buttonSpace} />
+                <Pressable 
+                style={styles.loginButton}
+                onPress={() => navigation.navigate('Dog Profile')} >
+                    <Text
+                    style={styles.buttonText}>
+                        Dog
+                    </Text>
+                </Pressable>
+                <View style={styles.buttonSpace} />
                 <Pressable
                 style={styles.registerButton}
                 onPress={() => navigation.navigate('Create Account')} >
