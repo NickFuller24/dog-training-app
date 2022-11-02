@@ -9,19 +9,30 @@ const styles = StyleSheet.create({
         //backgroundColor: 'blue'
     },
     navBarContainer: {
-        backgroundColor: '#D9D9D9',
         flexDirection: 'row',
         height: verticalScale(60),
         justifyContent: 'space-evenly',
         width: '100%'
     },
-    navBarContainerButton: { 
+    navBarImageLarge: {
+        height: scale(50),
+        width: scale(50)
+    },
+    navBarImageSmall: {
+        height: scale(30),
+        width: scale(30)
+    },
+    navBarIconContainer: {
+        height: scale(40),
+        width: scale(40),
+        borderRadius: 100,
+        alignItems: 'center',
+        justifyContent: 'center'
+    },
+    navBarContainerButton: {
         alignItems: 'center',
         flex: 1,
-        height: '100%',
         justifyContent: 'center',
-        width: '100%',
-        borderRadius: 100
     }
 })
 
