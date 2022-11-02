@@ -7,45 +7,40 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         flex: 1
     },
-    buttonContainer: {
-        top: verticalScale(250),
-        width: '80%',
-        height: verticalScale(150),
-        justifyContent: 'center',
+    overlayBox: {
+        flexDirection: "row",
+        justifyContent: "flex-start",
+        backgroundColor: "white",
+        padding: scale(16),
+        // opacity: 0.85,
+        position: "absolute",
+        top: verticalScale(162),
+        height: verticalScale(75),
+        width: "85%",
+        borderRadius: 17,
+        shadowColor: "black",
+        shadowOpacity: 0.25,
+        shadowRadius: 2,
+        shadowOffset: {
+            height: 3,
+            width: 0
+        }
     },
-    buttonText: {
-        color: 'white',
-        textAlign: 'center',
-        fontWeight: 'bold',
-        fontSize: scale(23),
-        top: verticalScale(10)
+    editIcon: {
+        height: scale(20),
+        width: scale(20)
     },
-    buttonSpace: {
-        width: '100%',
-        height: verticalScale(25)
+    profileName: {
+        fontSize: scale(20)
     },
-    loginButton: {
-        width: '100%',
-        height: verticalScale(50),
-        backgroundColor: "pink",
+    profileEmail: {
+        fontSize: scale(12)
     },
-    logoImage: {
-        width: scale(160),
-        height: verticalScale(150),
+    profileImage: {
+        width: "100%",
+        height: verticalScale(200),
+        resizeMode: "cover"
     },
-    logoContainer: {
-        position: 'absolute',
-        top: verticalScale(40),
-        alignItems: "center",
-    },
-    logoText: {
-        fontSize: scale(15),
-    },
-    registerButton: {
-        width: '100%',
-        height: verticalScale(50),
-        backgroundColor: "#4ecdc4",
-    }
 })
 
 export default styles;
