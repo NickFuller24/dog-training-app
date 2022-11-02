@@ -37,7 +37,7 @@ function SearchNewServiceScreen({navigation}: {navigation: any}) {
                     style={styles.triggerSelectionItemContent}>
                         <Image
                         style={styles.triggerSelectionItemContentImage}
-                        source={require('../assets/favicon.png')}/>
+                        source={require('../assets/triggerOtherDogs.png')}/>
                         <Text
                         style={styles.triggerSelectionItemContentText}>
                             Other Dogs
@@ -53,7 +53,7 @@ function SearchNewServiceScreen({navigation}: {navigation: any}) {
                     style={styles.triggerSelectionItemContent}>
                         <Image
                         style={styles.triggerSelectionItemContentImage}
-                        source={require('../assets/favicon.png')}/>
+                        source={require('../assets/triggerCars.png')}/>
                         <Text
                         style={styles.triggerSelectionItemContentText}>
                             Cars
@@ -69,7 +69,7 @@ function SearchNewServiceScreen({navigation}: {navigation: any}) {
                     style={styles.triggerSelectionItemContent}>
                         <Image
                         style={styles.triggerSelectionItemContentImage}
-                        source={require('../assets/favicon.png')}/>
+                        source={require('../assets/triggerSkateboards.png')}/>
                         <Text
                         style={styles.triggerSelectionItemContentText}>
                             Skateboards
@@ -85,7 +85,7 @@ function SearchNewServiceScreen({navigation}: {navigation: any}) {
                     style={styles.triggerSelectionItemContent}>
                         <Image
                         style={styles.triggerSelectionItemContentImage}
-                        source={require('../assets/favicon.png')}/>
+                        source={require('../assets/triggerBicycles.png')}/>
                         <Text
                         style={styles.triggerSelectionItemContentText}>
                             Bicycles
@@ -94,17 +94,17 @@ function SearchNewServiceScreen({navigation}: {navigation: any}) {
                 </TouchableOpacity>
                 <View style={styles.triggerSelectionSpace}/>
                 <TouchableOpacity
-                // "More" trigger button
-                onPress={() => navigation.navigate('Search New Service Date', {triggers: 'More'})}
+                // "Other" trigger button
+                onPress={() => navigation.navigate('Search New Service Date', {triggers: 'Other'})}
                 style={styles.triggerSelectionItem}>
                     <View
                     style={styles.triggerSelectionItemContent}>
                         <Image
                         style={styles.triggerSelectionItemContentImage}
-                        source={require('../assets/favicon.png')}/>
+                        source={require('../assets/triggerOther.png')}/>
                         <Text
                         style={styles.triggerSelectionItemContentText}>
-                            More
+                            Other
                         </Text>
                     </View>
                 </TouchableOpacity>

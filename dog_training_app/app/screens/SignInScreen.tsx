@@ -3,6 +3,14 @@ import React, { useState } from 'react';
 import { View, Image, Text, Pressable, TextInput, KeyboardAvoidingView } from 'react-native';
 import styles from '../styles/SignInScreenStyles.js';
 
+// Data for demo login
+const DATA = {
+        username: 'nicholas.b.fuller@gmail.com',
+        password: 'password'
+    }
+
+//
+
 function SignInScreen({navigation}: {navigation: any}) {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
@@ -36,6 +44,7 @@ function SignInScreen({navigation}: {navigation: any}) {
                 onChangeText={username => setUsername(username)}>
                 </TextInput>
                 <TextInput
+                secureTextEntry={true}
                 style={styles.loginPasswordTextInput}
                 placeholder={"Password"}
                 onChangeText={password => setPassword(password)}>
@@ -60,7 +69,13 @@ function SignInScreen({navigation}: {navigation: any}) {
                 style={styles.signInGeneric}
                 // ***Where authentication comes in, on this onPress. Check user info with database***
                 //onPress={() => setShowLoginError(!showLoginError)}
-                onPress={() => navigation.navigate('Home')}
+                onPress={() => {
+                    if(username == DATA.username && password == DATA.password) {
+                        navigation.navigate('Home')
+                    } else {
+                        setShowLoginError(true)
+                    }
+                }}
                 >
                     <Text
                     style={styles.buttonText}>

@@ -26,8 +26,8 @@ const styles = StyleSheet.create({
     },
     triggerSelectionItemContentImage: {
         alignSelf: 'center',
-        height: verticalScale(30),
-        width: scale(30),
+        height: verticalScale(35),
+        width: scale(40),
     },
     triggerSelectionItemContentText: {
         fontSize: scale(16),
@@ -35,7 +35,7 @@ const styles = StyleSheet.create({
     },
     triggerSelectionScroll: {
         alignSelf: 'center',
-        height: verticalScale(1000),
+        height: verticalScale(600),
         top: verticalScale(30),
         width: '80%',
     },
@@ -47,7 +47,6 @@ const styles = StyleSheet.create({
         fontSize: scale(22),
         top: verticalScale(30),
         width: '80%',
-        //backgroundColor: 'red'
     }
 })
 
