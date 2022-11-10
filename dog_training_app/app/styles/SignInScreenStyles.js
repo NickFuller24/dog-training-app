@@ -47,13 +47,13 @@ const styles = StyleSheet.create({
     },
     loginUsernameTextInput: {
         height: verticalScale(20),
-        borderBottomWidth: '1%',
+        borderBottomWidth: 1,
         top: verticalScale(10),
         fontSize: scale(20)
     },
     loginPasswordTextInput: {
         height: verticalScale(20),
-        borderBottomWidth: '1%',
+        borderBottomWidth: 1,
         top: verticalScale(30),
         fontSize: scale(20)
     },

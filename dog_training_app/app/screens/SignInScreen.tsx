@@ -1,21 +1,35 @@
-import { ConsoleLogger } from '@aws-amplify/core';
-import React, { useState } from 'react';
+import React, { useState, useCallback } from 'react';
+import auth from '@react-native-firebase/auth';
 import { View, Image, Text, Pressable, TextInput, KeyboardAvoidingView } from 'react-native';
 import styles from '../styles/SignInScreenStyles.js';
-
-// Data for demo login
-const DATA = {
-        username: 'nicholas.b.fuller@gmail.com',
-        password: 'password'
-    }
-
-//
 
 function SignInScreen({navigation}: {navigation: any}) {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [showLoginError, setShowLoginError] = useState(false);
     const [rememberMeClicked, setRememberMeClicked] = useState(false);
+
+    const signIn = useCallback( () => {
+        auth()
+            .signInWithEmailAndPassword(username, password)
+            .then(() => {
+                console.log('User signed in!');
+                console.log( username );
+                console.log( password );
+            })
+            .catch(error => {
+                // if (error.code === 'auth/email-already-in-use') {
+                // console.log('That email address is already in use!');
+                // }
+
+                // if (error.code === 'auth/invalid-email') {
+                // console.log('That email address is invalid!');
+                // }
+
+                console.error(error);
+            });
+    }, [ username, password ] );
+
     return (
         <KeyboardAvoidingView
         style={styles.background} >
@@ -66,16 +80,8 @@ function SignInScreen({navigation}: {navigation: any}) {
                 </View>
                 <View style={styles.buttonSpace}/>
                 <Pressable
-                style={styles.signInGeneric}
-                // ***Where authentication comes in, on this onPress. Check user info with database***
-                //onPress={() => setShowLoginError(!showLoginError)}
-                onPress={() => {
-                    if(username == DATA.username && password == DATA.password) {
-                        navigation.navigate('Home')
-                    } else {
-                        setShowLoginError(true)
-                    }
-                }}
+                    style={styles.signInGeneric}
+                    onPress={signIn}
                 >
                     <Text
                     style={styles.buttonText}>

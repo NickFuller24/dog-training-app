@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { View, Image, Text, Pressable, TextInput } from 'react-native';
 import styles from '../../styles/DogProfileScreenStyles.js';
 

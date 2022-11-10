@@ -19,25 +19,27 @@
     ],
     "ios": {
       "supportsTablet": true,
-      "googleServicesFile": "./GoogleService-Info.plist"
+      "googleServicesFile": "./GoogleService-Info.plist",
+      "bundleIdentifier": "com.dogwizardry.gig"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./app/assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
       },
-      "googleServicesFile": "./google-services.json"
+      "googleServicesFile": "./google-services.json",
+      "package": "com.dogwizardry.gig"
     },
     "plugins": [
-      "@react-native-firebase/app",
-      [
-        "expo-build-properties",
-        {
-          "ios": {
-            "useFrameworks": "static"
-          }
-        }
-      ]
+      "@react-native-firebase/app"
+      // [
+      //   "expo-build-properties",
+      //   {
+      //     "ios": {
+      //       "useFrameworks": "static"
+      //     }
+      //   }
+      // ]
     ]
   }
 }

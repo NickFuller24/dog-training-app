@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "103870474880",
+    "project_id": "dog-wizardry",
+    "storage_bucket": "dog-wizardry.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:103870474880:android:d809e726ad79c3f341d465",
+        "android_client_info": {
+          "package_name": "com.dogwizardry.gig"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "103870474880-5vlpcjh94d29qsjodt148qu4g3hopi0o.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCMaRYaX6RCFDiFUIkUtu3bzBNUO6i_Mb8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "103870474880-5vlpcjh94d29qsjodt148qu4g3hopi0o.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "103870474880-6ukj0dfn2fqpkjcl6r3s4hr7vhb4sk11.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.dogwizardry.gig"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

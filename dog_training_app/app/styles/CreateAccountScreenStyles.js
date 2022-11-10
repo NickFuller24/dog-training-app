@@ -32,7 +32,7 @@ const styles = StyleSheet.create({
     },
     signUpFullnameTextInput: {
         height: verticalScale(20),
-        borderBottomWidth: '1%',
+        borderBottomWidth: 1,
         top: verticalScale(10),
         fontSize: scale(20)
     },
@@ -48,7 +48,7 @@ const styles = StyleSheet.create({
     },
     signUpPasswordTextInput: {
         height: verticalScale(20),
-        borderBottomWidth: '1%',
+        borderBottomWidth: 1,
         top: verticalScale(30),
         fontSize: scale(20)
     },
@@ -68,7 +68,7 @@ const styles = StyleSheet.create({
     },
     signUpUsernameTextInput: {
         height: verticalScale(20),
-        borderBottomWidth: '1%',
+        borderBottomWidth: 1,
         top: verticalScale(20),
         fontSize: scale(20)
     },
