@@ -18,5 +18,8 @@ module.exports = {
     'react'
   ],
   rules: {
+    "no-unused-vars": ["warn"],
+    "sort-imports": ["warn"],
+    "prefer-const": ["error"]
   }
 }
