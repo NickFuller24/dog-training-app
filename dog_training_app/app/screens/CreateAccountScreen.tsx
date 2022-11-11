@@ -1,13 +1,31 @@
-import { ConsoleLogger } from '@aws-amplify/core';
-import React, { useState } from 'react';
+import React, { useState, useCallback } from 'react';
 import { View, Image, Text, Pressable, TextInput } from 'react-native';
+import auth from '@react-native-firebase/auth';
 import styles from '../styles/CreateAccountScreenStyles';
 
 function CreateAccountScreen({navigation}: {navigation: any}) {
-    const [fullname, setFullname] = useState('');
-    const [username, setUsername] = useState('');
+    const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const [userButton, setUserButton] = useState(true);
+
+    const createAccount = useCallback( () => {
+        auth()
+            .createUserWithEmailAndPassword(email, password)
+            .then(() => {
+                console.log('User account created & signed in!');
+            })
+            .catch(error => {
+                if (error.code === 'auth/email-already-in-use') {
+                console.log('That email address is already in use!');
+                }
+
+                if (error.code === 'auth/invalid-email') {
+                console.log('That email address is invalid!');
+                }
+
+                console.error(error);
+            });
+    }, [ email, password ] );
+
     return (
         <View
         style={styles.background} >
@@ -24,14 +42,9 @@ function CreateAccountScreen({navigation}: {navigation: any}) {
             <View
             style={styles.signUpInfoContainer}>
                 <TextInput
-                style={styles.signUpFullnameTextInput}
-                placeholder={"Full Name"}
-                onChangeText={fullname => setFullname(fullname)}>
-                </TextInput>
-                <TextInput
                 style={styles.signUpUsernameTextInput}
-                placeholder={"Username"}
-                onChangeText={username => setUsername(username)}>
+                placeholder={"Email"}
+                onChangeText={setEmail}>
                 </TextInput>
                 <TextInput
                 style={styles.signUpPasswordTextInput}
@@ -39,28 +52,10 @@ function CreateAccountScreen({navigation}: {navigation: any}) {
                 onChangeText={password => setPassword(password)}>
                 </TextInput>
                 <View style={styles.buttonSpace}/>
-                <View
-                style={styles.signUpUserTrainerContainer}>
-                    <Pressable
-                    style={[styles.signUpUserButton, userButton? {backgroundColor: 'pink'} : {backgroundColor: 'lightgray'}]}
-                    onPress={() => setUserButton(true)}>
-                        <Text
-                        style={styles.signUpUserButtonText}>
-                            User
-                        </Text>
-                    </Pressable>
-                    <Pressable
-                    style={[styles.signUpTrainerButton, userButton? {backgroundColor: 'lightgray'} : {backgroundColor: 'pink'}]}
-                    onPress={() => setUserButton(false)}>
-                        <Text
-                        style={styles.signUpTrainerButtonText}>
-                            Trainer
-                        </Text>
-                    </Pressable>
-                </View>
                 <Pressable
                 style={styles.signUpGeneric}
                 // ***Where authentication comes in, on this onPress. Check user data / register account***
+                onPress={createAccount}
                 >
                     <Text
                     style={styles.buttonText}>

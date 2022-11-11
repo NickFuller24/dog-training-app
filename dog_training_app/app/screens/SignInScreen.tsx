@@ -18,13 +18,9 @@ function SignInScreen({navigation}: {navigation: any}) {
                 console.log( password );
             })
             .catch(error => {
-                // if (error.code === 'auth/email-already-in-use') {
-                // console.log('That email address is already in use!');
-                // }
-
-                // if (error.code === 'auth/invalid-email') {
-                // console.log('That email address is invalid!');
-                // }
+                if (error.code === 'auth/wrong-password') {
+                console.log('This password is invalid or the user does not exist!');
+                }
 
                 console.error(error);
             });
