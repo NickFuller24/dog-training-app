@@ -6,7 +6,10 @@ function LoginScreen({ navigation }: { navigation: any }) {
   return (
     <View style={styles.background}>
       <View style={styles.logoContainer}>
-        <Image style={styles.logoImage} source={require("../assets/loginDogImage.png")}/>
+        <Image
+          style={styles.logoImage}
+          source={require("../assets/loginDogImage.png")}
+        />
         <Text style={styles.logoText}>Train your dog!</Text>
       </View>
       <View style={styles.buttonContainer}>
