@@ -1,7 +1,5 @@
 {
-  "providers": [
-    "awscloudformation"
-  ],
+  "providers": ["awscloudformation"],
   "projectName": "DogTrainingAuthentic",
   "version": "3.1",
   "frontend": "javascript",
