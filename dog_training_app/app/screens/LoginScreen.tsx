@@ -23,9 +23,9 @@ function LoginScreen({ navigation }: { navigation: any }) {
         <View style={styles.buttonSpace} />
         <Pressable
           style={styles.loginButton}
-          onPress={() => navigation.navigate("Dog Profile")}
+          onPress={() => navigation.navigate("Home")}
         >
-          <Text style={styles.buttonText}>Dog</Text>
+          <Text style={styles.buttonText}>Home</Text>
         </Pressable>
         <View style={styles.buttonSpace} />
         <Pressable

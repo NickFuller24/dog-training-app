@@ -1,6 +1,7 @@
-import React, { Fragment, useState } from "react";
+import React from "react";
 import {
   Image,
+  ImageBackground,
   Pressable,
   ScrollView,
   Text,
@@ -9,10 +10,11 @@ import {
 } from "react-native";
 import styles from "../styles/HomeScreenStyles.js";
 import { SafeAreaView } from "react-native-safe-area-context";
+import Background from "../components/Background";
 
 function HomeScreen({ navigation }: { navigation: any }) {
   return (
-    <Fragment>
+    <Background>
       <SafeAreaView
         // Every other part of the screen
         style={styles.background}
@@ -84,11 +86,7 @@ function HomeScreen({ navigation }: { navigation: any }) {
           </TouchableOpacity>
         </View>
       </SafeAreaView>
-
-      <View
-      // Bottom of screen that should be the same color as nav bar
-      ></View>
-    </Fragment>
+    </Background>
   );
 }
 
