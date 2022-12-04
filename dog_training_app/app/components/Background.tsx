@@ -9,7 +9,7 @@ const Background = (props: BackgroundProps) => {
   return (
     <ImageBackground
       source={require("../assets/Background.png")}
-      style={{ flex: 1, width: "100%", height: "100%" }}
+      style={{ flex: 1, width: "100%", height: "100%", flexDirection: "column" }}
     >
       {props.children}
     </ImageBackground>
