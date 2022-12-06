@@ -76,7 +76,7 @@ function ProfileScreen({ navigation }: { navigation: any }) {
           />
         </TouchableOpacity>
       </View>
-      <Navbar selected={"Profile"} navigation={navigation}/>
+      <Navbar selected={"Profile"} navigation={navigation} />
     </Background>
   );
 }

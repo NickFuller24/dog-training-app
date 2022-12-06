@@ -57,7 +57,9 @@ function SearchNewServiceScreen({ navigation }: { navigation: any }) {
           <TouchableOpacity
             // "Cars" trigger button
             onPress={() =>
-              navigation.navigate("Search New Service Date", { triggers: "Cars" })
+              navigation.navigate("Search New Service Date", {
+                triggers: "Cars",
+              })
             }
             style={styles.triggerSelectionItem}
           >
@@ -104,7 +106,9 @@ function SearchNewServiceScreen({ navigation }: { navigation: any }) {
                 style={styles.triggerSelectionItemContentImage}
                 source={require("../assets/triggerBicycles.png")}
               />
-              <Text style={styles.triggerSelectionItemContentText}>Bicycles</Text>
+              <Text style={styles.triggerSelectionItemContentText}>
+                Bicycles
+              </Text>
             </View>
           </TouchableOpacity>
           <View style={styles.triggerSelectionSpace} />
