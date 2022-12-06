@@ -1,7 +1,7 @@
 import { ConsoleLogger } from "@aws-amplify/core";
 import React, { useState } from "react";
 import { View, Image, Text, Pressable, TextInput } from "react-native";
-import styles from "../styles/LoginScreenStyles.js";
+import styles from "../styles/LoginScreenStyles";
 
 function LoginScreen({ navigation }: { navigation: any }) {
   return (

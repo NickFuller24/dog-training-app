@@ -1,7 +1,19 @@
-import { StyleSheet, Dimensions } from "react-native";
-import { scale, moderateScale, verticalScale } from "./scaling";
+import { StyleSheet, TextStyle, ViewStyle, ImageStyle } from "react-native";
+import { scale, verticalScale, moderateScale } from "./scaling";
 
-const styles = StyleSheet.create({
+type Style = {
+  background: ViewStyle;
+  buttonContainer: ViewStyle;
+  buttonText: TextStyle;
+  buttonSpace: ViewStyle;
+  loginButton: ViewStyle;
+  logoImage: ImageStyle;
+  logoContainer: ViewStyle;
+  logoText: TextStyle;
+  registerButton: ViewStyle;
+};
+
+const styles: Style = StyleSheet.create<Style>({
   background: {
     justifyContent: "flex-start",
     alignItems: "center",
@@ -45,7 +57,7 @@ const styles = StyleSheet.create({
     width: "100%",
     height: verticalScale(50),
     backgroundColor: "#FDB156",
-  },
+  }
 });
 
 export default styles;

@@ -12,11 +12,18 @@ import SearchNewServiceDateScreen from "./app/screens/SearchNewServiceDateScreen
 import HomeScreen from "./app/screens/HomeScreen";
 import VendorListScreen from "./app/screens/vendorListScreen";
 import CalendarScreen from "./app/screens/CalendarScreen";
+import { useFonts } from "expo-font";
 
 // Create navigation stack
 const Stack = createNativeStackNavigator();
 
 const App = () => {
+  const [fontsLoaded] = useFonts({
+    'Inter': require('./app/assets/fonts/Inter.ttf'),
+    'Gelasio-Regular': require('./app/assets/fonts/Gelasio-Regular.ttf'),
+    'Gelasio-Bold': require('./app/assets/fonts/Gelasio-Bold.ttf'),
+  });
+
   return (
     <NavigationContainer>
       <Stack.Navigator>
@@ -28,7 +35,7 @@ const App = () => {
         <Stack.Screen
           name="Sign In"
           component={SignInScreen}
-          options={{ headerShown: true }}
+          options={{ headerShown: false }}
         />
         <Stack.Screen
           name="Create Account"
