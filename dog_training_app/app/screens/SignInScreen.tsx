@@ -23,7 +23,7 @@ function SignInScreen({ navigation }: { navigation: any }) {
         // Signed in
         const user = userCredential.user;
         console.log(user);
-        navigation.navigate("Home");
+        navigation.navigate("Home", { userID: user.uid });
         // ...
       })
       .catch((error) => {
