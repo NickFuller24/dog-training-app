@@ -22,7 +22,7 @@ function HomeScreen({
 
   return (
     <Background>
-      <Navbar navigation={navigation} selected={"Home"}/>
+      <Navbar navigation={navigation} userID={userID} selected={"Home"}/>
     </Background>
   );
 }
