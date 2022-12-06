@@ -8,6 +8,7 @@ import {
 } from "react-native";
 import styles from "../styles/vendorListScreenStyles.js";
 import { SafeAreaView } from "react-native-safe-area-context";
+import Background from "../components/Background";
 import { photoPickerButton } from "aws-amplify";
 // Use CalendarPicker later
 //import CalendarPicker from 'react-native-calendar-picker';
@@ -122,35 +123,37 @@ function VendorListScreen({
     ) : null;
 
   return (
-    <SafeAreaView
-      // Ensures content doesn't go outside of newer iPhone design
-      style={styles.background}
-    >
-      <TouchableOpacity
-        // Back button press functionality
-        onPress={() => navigation.goBack()}
-        style={styles.backButton}
+    <Background>
+      <SafeAreaView
+        // Ensures content doesn't go outside of newer iPhone design
+        style={styles.background}
       >
-        <Text
-          // The actual text content of the back button
-          style={styles.backButtonText}
+        <TouchableOpacity
+          // Back button press functionality
+          onPress={() => navigation.goBack()}
+          style={styles.backButton}
         >
-          &#8592;
+          <Text
+            // The actual text content of the back button
+            style={styles.backButtonText}
+          >
+            &#8592;
+          </Text>
+        </TouchableOpacity>
+        <Text
+          // Description for selecting trigger
+          style={styles.vendorSelectionTopText}
+        >
+          What vendor would you like to work with?
         </Text>
-      </TouchableOpacity>
-      <Text
-        // Description for selecting trigger
-        style={styles.vendorSelectionTopText}
-      >
-        What vendor would you like to work with?
-      </Text>
-      <View
-        // For scrolling through the list of triggers
-        style={styles.vendorSelectionScroll}
-      >
-        <FlatList data={DATA} renderItem={renderItem} />
-      </View>
-    </SafeAreaView>
+        <View
+          // For scrolling through the list of triggers
+          style={styles.vendorSelectionScroll}
+        >
+          <FlatList data={DATA} renderItem={renderItem} />
+        </View>
+      </SafeAreaView>
+    </Background>
   );
 }
 

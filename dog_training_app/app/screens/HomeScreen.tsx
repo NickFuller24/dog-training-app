@@ -12,7 +12,17 @@ import styles from "../styles/HomeScreenStyles.js";
 import { SafeAreaView } from "react-native-safe-area-context";
 import Background from "../components/Background";
 
-function HomeScreen({ navigation }: { navigation: any }) {
+function HomeScreen({
+  route,
+  navigation,
+}: {
+  route: any;
+  navigation: any;
+}) {
+
+  // Get user ID so we can populate screen
+  const { userID } = route.params;
+
   return (
     <Background>
       <SafeAreaView
@@ -36,7 +46,8 @@ function HomeScreen({ navigation }: { navigation: any }) {
               />
             </View>
           </TouchableOpacity>
-          <TouchableOpacity style={styles.navBarContainerButton}>
+          <TouchableOpacity style={styles.navBarContainerButton}
+          onPress={() => navigation.navigate("Calendar", { userID: userID })}>
             <View
               style={[
                 styles.navBarIconContainer,

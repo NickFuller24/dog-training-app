@@ -11,6 +11,7 @@ import SearchNewServiceScreen from "./app/screens/SearchNewServiceScreen";
 import SearchNewServiceDateScreen from "./app/screens/SearchNewServiceDateScreen";
 import HomeScreen from "./app/screens/HomeScreen";
 import VendorListScreen from "./app/screens/vendorListScreen";
+import CalendarScreen from "./app/screens/CalendarScreen";
 
 // Create navigation stack
 const Stack = createNativeStackNavigator();
@@ -62,6 +63,11 @@ const App = () => {
         <Stack.Screen
           name="Vendor List"
           component={VendorListScreen}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="Calendar"
+          component={CalendarScreen}
           options={{ headerShown: false }}
         />
       </Stack.Navigator>

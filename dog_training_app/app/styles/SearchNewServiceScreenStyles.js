@@ -6,6 +6,7 @@ const styles = StyleSheet.create({
     height: verticalScale(40),
   },
   backButtonText: {
+    color: "#FFFFFF",
     fontSize: scale(40),
   },
   background: {
@@ -44,6 +45,7 @@ const styles = StyleSheet.create({
   },
   triggerSelectionTopText: {
     alignSelf: "center",
+    color: "#FFFFFF",
     fontSize: scale(22),
     top: verticalScale(30),
     width: "80%",
