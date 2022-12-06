@@ -7,6 +7,8 @@ import {
   TextInput,
   TouchableOpacity,
 } from "react-native";
+import Background from "../../components/Background";
+import Navbar from "../../components/Navbar";
 import styles from "../../styles/ProfileScreenStyles.js";
 import { User } from "../../types.js";
 
@@ -55,7 +57,7 @@ const testUser: User = {
 
 function ProfileScreen({ navigation }: { navigation: any }) {
   return (
-    <View style={styles.background}>
+    <Background>
       <Image
         style={styles.profileImage}
         source={require("../../assets/profilePic.png")}
@@ -74,7 +76,8 @@ function ProfileScreen({ navigation }: { navigation: any }) {
           />
         </TouchableOpacity>
       </View>
-    </View>
+      <Navbar selected={"Profile"} navigation={navigation}/>
+    </Background>
   );
 }
 
