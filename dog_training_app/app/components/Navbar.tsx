@@ -4,17 +4,18 @@ import styles from "../styles/NavbarStyles";
 import { icon } from "../types";
 
 type navProps = {
-  selected: icon;
-  navigation: any;
+  selected: icon,
+  navigation: any,
+  userID: any
 };
 
 const Navbar = (props: navProps) => {
-  const { selected, navigation } = props;
+  const { selected, navigation, userID } = props;
 
   return (
     <View style={styles.navBarContainer}>
       <TouchableOpacity
-        onPress={() => navigation.navigate("Home")}
+        onPress={() => navigation.navigate("Home", {userID: userID})}
         style={styles.navBarContainerButton}
       >
         {selected === "Home" ? (
@@ -36,9 +37,8 @@ const Navbar = (props: navProps) => {
         )}
       </TouchableOpacity>
       <TouchableOpacity
-        style={styles.navBarContainerButton}
-        onPress={() => navigation.navigate("Calendar")}
-      >
+      onPress={() => navigation.navigate("Calendar", {userID: userID})}
+      style={styles.navBarContainerButton}>
         {selected === "Calendar" ? (
           <Fragment>
             <Image
@@ -79,7 +79,9 @@ const Navbar = (props: navProps) => {
           </Fragment>
         )}
       </TouchableOpacity>
-      <TouchableOpacity style={styles.navBarContainerButton}>
+      <TouchableOpacity
+      onPress={() => navigation.navigate("Inbox", {userID: userID})}
+      style={styles.navBarContainerButton}>
         {selected === "Inbox" ? (
           <Fragment>
             <Image
