@@ -79,3 +79,12 @@ export type Service = {
   price: Number;
   description: String;
 };
+
+// Beginning of all icon import strings
+export type icon = 
+  "Home" |
+  "Calendar" |
+  "Book" |
+  "Inbox" |
+  "Profile"
+;
