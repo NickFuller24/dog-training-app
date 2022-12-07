@@ -15,7 +15,7 @@ const styles = StyleSheet.create({
     padding: scale(15),
   },
   vendorSelectionItem: {
-    backgroundColor: "#D9D9D9",
+    backgroundColor: "rgba( 250, 250, 250, 0.7 )",
     borderRadius: 20,
     flexDirection: "row",
     height: verticalScale(75),

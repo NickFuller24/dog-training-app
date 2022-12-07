@@ -15,14 +15,15 @@ const styles = StyleSheet.create({
     padding: scale(15),
   },
   triggerSelectionItem: {
-    backgroundColor: "#D9D9D9",
-    borderRadius: 20,
+    backgroundColor: "rgba( 250, 250, 250, 0.7 )",
+    borderRadius: 10,
     flexDirection: "row",
     height: verticalScale(70),
   },
   triggerSelectionItemContent: {
     alignSelf: "center",
     flexDirection: "row",
+    alignItems: "center",
     padding: 10,
   },
   triggerSelectionItemContentImage: {

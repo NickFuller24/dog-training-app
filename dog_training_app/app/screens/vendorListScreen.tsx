@@ -19,25 +19,25 @@ const DATA = [
     name: "John Chambers",
     triggers: "Cars",
     phone: "573-341-6731",
-    dates: "November 3",
+    dates: "12/7/2022",
   },
   {
     name: "Pat Smith",
-    triggers: "Cars",
+    triggers: "Other Dogs",
     phone: "872-509-1302",
-    dates: "November 3",
+    dates: "12/8/2022",
   },
   {
     name: "Tom Brock",
     triggers: "Cars",
     phone: "314-344-1450",
-    dates: "November 4",
+    dates: "12/7/2022",
   },
   {
     name: "Carrie Thomas",
     triggers: "Other Dogs",
     phone: "314-291-3501",
-    dates: "November 4",
+    dates: "12/9/2022",
   },
 ];
 
@@ -108,6 +108,8 @@ function VendorListScreen({
 }) {
   // Read in trigger parameter
   const { triggers, date, location } = route.params;
+
+  console.log( date )
 
   // For the Flat List. This is how we populate each above Item with information
   const renderItem = ({ item }: { item: any }) =>

@@ -15,7 +15,7 @@ const styles = StyleSheet.create({
     padding: scale(15),
   },
   dateItem: {
-    backgroundColor: "#D9D9D9",
+    backgroundColor: "rgba( 250, 250, 250, 0.7 )",
     borderBottomColor: "darkgray",
     borderBottomWidth: verticalScale(0.5),
     borderTopLeftRadius: 20,
@@ -29,7 +29,11 @@ const styles = StyleSheet.create({
     color: "gray",
     fontSize: scale(35),
   },
-  dateLocationItemText: {},
+  dateLocationItemText: {
+    flexDirection: "column",
+    width: "80%",
+    alignItems: "flex-start"
+  },
   dateLocationItemTextData: {
     fontSize: scale(13),
     top: verticalScale(10),
@@ -64,7 +68,7 @@ const styles = StyleSheet.create({
     height: verticalScale(200),
   },
   locationItem: {
-    backgroundColor: "#D9D9D9",
+    backgroundColor: "rgba( 250, 250, 250, 0.7 )",
     borderBottomLeftRadius: 20,
     borderBottomRightRadius: 20,
     flexDirection: "row",

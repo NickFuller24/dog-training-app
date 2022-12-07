@@ -83,12 +83,15 @@ function LandingScreen({ navigation }: { navigation: any }) {
 const LandingScreenContent = ({ navigation }: { navigation: any }) => {
   return (
     <Fragment>
-      <View style={styles.whistleContainer}>
+      <Pressable 
+        onPress={navigation.navigate("Home", {userID: 2})}
+        style={styles.whistleContainer}
+      >
         <Image source={require("../assets/whiteWhistle.png")}/>
         <Text style={styles.whistleText}>
           Dog Trainer App
         </Text>
-      </View>
+      </Pressable>
       <View style={styles.buttonContainer}>
         <Pressable
           style={styles.loginButton}

@@ -3,8 +3,7 @@ import { Modal, Text, TextInput, TouchableOpacity, View } from "react-native";
 import styles from "../styles/SearchNewServiceDateScreenStyles.js";
 import { SafeAreaView } from "react-native-safe-area-context";
 import Background from "../components/Background";
-// Use CalendarPicker later
-//import CalendarPicker from 'react-native-calendar-picker';
+import DateTimePicker from '@react-native-community/datetimepicker';
 
 function SearchNewServiceDateScreen({
   route,
@@ -17,8 +16,8 @@ function SearchNewServiceDateScreen({
   const { triggers } = route.params;
 
   // Save date and location
-  const [dateText, setDateText] = useState("");
-  const [locationText, setLocationText] = useState("");
+  const [date, setDate] = useState(new Date());
+  const [locationText, setLocationText] = useState("Rolla, MO");
 
   const [datePopupVisible, setDatePopupVisible] = useState(false);
   const [locationPopupVisible, setLocationPopupVisible] = useState(false);
@@ -51,28 +50,23 @@ function SearchNewServiceDateScreen({
           style={styles.dateLocationContainer}
         >
           <View style={styles.dateLocationSpace} />
-          <TouchableOpacity
+          <View
             // Entire date button
-            //onPress={() => setDatePopupVisible(true)}
             style={styles.dateItem}
           >
-            <View
-              // Container for date title and actual date
-              style={styles.dateLocationItemText}
-            >
+            <View style={styles.dateLocationItemText}>
               <Text
                 // Date title
                 style={styles.dateLocationItemTextTitle}
               >
                 Date
               </Text>
-              <TextInput
-                // Actual date.
-                // When there is a popup menu, this will just be text
-                placeholder="Date"
-                onChangeText={(date) => setDateText(date)}
-                style={styles.dateLocationItemTextData}
-              ></TextInput>
+              <DateTimePicker
+                style={{ position: "absolute", left: -85, top: 20, width: 200 }}
+                mode="date"
+                value={date}
+                onChange={(event, date) => setDate(date || new Date())}
+              />
             </View>
             <Text
               // Right arrow for date
@@ -80,7 +74,7 @@ function SearchNewServiceDateScreen({
             >
               &#8250;
             </Text>
-          </TouchableOpacity>
+          </View>
           <TouchableOpacity
             // Entire location button
             style={styles.locationItem}
@@ -100,6 +94,7 @@ function SearchNewServiceDateScreen({
                 placeholder="Location"
                 onChangeText={(location) => setLocationText(location)}
                 style={styles.dateLocationItemTextData}
+                value={locationText}
               ></TextInput>
             </View>
             <Text
@@ -115,7 +110,7 @@ function SearchNewServiceDateScreen({
           onPress={() =>
             navigation.navigate("Vendor List", {
               triggers: triggers,
-              date: dateText,
+              date: date.toLocaleDateString(),
               location: locationText,
             })
           }
@@ -128,18 +123,6 @@ function SearchNewServiceDateScreen({
             Next
           </Text>
         </TouchableOpacity>
-
-        <Modal
-          // Popup menu for date input
-          // Will implement this later.
-          animationType="slide"
-          transparent={true}
-          visible={datePopupVisible}
-        >
-          <View style={styles.datePopupContainer}>
-            <Text>Test</Text>
-          </View>
-        </Modal>
       </SafeAreaView>
     </Background>
   );
