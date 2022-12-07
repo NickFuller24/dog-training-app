@@ -102,7 +102,7 @@ const Navbar = (props: navProps) => {
       </TouchableOpacity>
       <TouchableOpacity
         style={styles.navBarContainerButton}
-        onPress={() => navigation.navigate("Profile")}
+        onPress={() => navigation.navigate("Profile", {userID: userID})}
       >
         {selected === "Profile" ? (
           <Fragment>

@@ -76,9 +76,9 @@ function ProfileScreen({
           style={{ flexDirection: "column", justifyContent: "space-between" }}
         >
           <Text style={styles.profileName}>{testUser.name}</Text>
-          <Text style={styles.profileEmail}>{testUser.email}</Text>
+          <Text style={styles.profileEmail}>{testUser.address.city}, {testUser.address.state}</Text>
         </View>
-        <TouchableOpacity>
+        <TouchableOpacity style={{ position: "absolute", right: 20, top: 20 }}>
           <Image
             source={require("../../assets/editIcon.png")}
             style={styles.editIcon}

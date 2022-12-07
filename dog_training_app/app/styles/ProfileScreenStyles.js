@@ -8,13 +8,14 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   overlayBox: {
+    backgroundColor: "rgba( 250, 250, 250, 0.9 )",
     flexDirection: "row",
     justifyContent: "flex-start",
-    backgroundColor: "white",
     padding: scale(16),
     // opacity: 0.85,
     position: "absolute",
     top: verticalScale(162),
+    alignSelf: "center",
     height: verticalScale(75),
     width: "85%",
     borderRadius: 17,
@@ -29,6 +30,8 @@ const styles = StyleSheet.create({
   editIcon: {
     height: scale(20),
     width: scale(20),
+    position: "absolute",
+    right: 0
   },
   profileName: {
     fontSize: scale(20),

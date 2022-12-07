@@ -39,7 +39,7 @@ const App = () => {
         <Stack.Screen
           name="Profile"
           component={ProfileScreen}
-          options={{ headerShown: true }}
+          options={{ headerShown: false }}
         />
         <Stack.Screen
           name="Dog Profile"
