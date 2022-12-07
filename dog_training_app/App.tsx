@@ -2,7 +2,7 @@ import * as React from "react";
 import { View, Text } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import LoginScreen from "./app/screens/LoginScreen";
+import LandingScreen from "./app/screens/LandingScreen";
 import CreateAccountScreen from "./app/screens/CreateAccountScreen";
 import SignInScreen from "./app/screens/SignInScreen";
 import ProfileScreen from "./app/screens/Profile/ProfileScreen";
@@ -22,19 +22,19 @@ const App = () => {
     <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen
-          name="Login"
-          component={LoginScreen}
-          options={{ headerShown: true }}
+          name="Landing"
+          component={LandingScreen}
+          options={{ headerShown: false }}
         />
         <Stack.Screen
           name="Sign In"
           component={SignInScreen}
-          options={{ headerShown: true }}
+          options={{ headerShown: false }}
         />
         <Stack.Screen
           name="Create Account"
           component={CreateAccountScreen}
-          options={{ headerShown: true }}
+          options={{ headerShown: false }}
         />
         <Stack.Screen
           name="Profile"

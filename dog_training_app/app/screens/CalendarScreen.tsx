@@ -17,35 +17,25 @@ const DATA = [
   {
     name: "John Chambers",
     date: "December 3, 2022",
-    time: "12 PM - 1 PM"
+    time: "12 PM - 1 PM",
   },
   {
     name: "Kathy Rodgers",
     date: "December 5, 2022",
-    time: "2 PM - 4 PM"
+    time: "2 PM - 4 PM",
   },
   {
     name: "Pat Thomas",
     date: "December 6, 2022",
-    time: "3 PM - 4 PM"
-  }
-]
+    time: "3 PM - 4 PM",
+  },
+];
 
 // For populating Today and Upcoming
-const Item = ({
-  name,
-  date,
-  time
-}: {
-  name: any;
-  date: any;
-  time: any;
-}) => (
+const Item = ({ name, date, time }: { name: any; date: any; time: any }) => (
   <View>
     <View style={styles.vendorSelectionSpace} />
-    <TouchableOpacity
-      style={styles.vendorSelectionItem}
-    >
+    <TouchableOpacity style={styles.vendorSelectionItem}>
       <View
         // The container for text
         style={styles.vendorSelectionItemTextContainer}
@@ -56,8 +46,7 @@ const Item = ({
         >
           {name}
         </Text>
-        <View
-        style={styles.vendorSelectionItemTextContainerInner}>
+        <View style={styles.vendorSelectionItemTextContainerInner}>
           <Text
             // Where the date will go
             style={styles.vendorSelectionItemTextContainerDate}
@@ -76,9 +65,9 @@ const Item = ({
   </View>
 );
 
-function CalendarScreen({ navigation, route }: { navigation: any, route: any }) {
+function CalendarScreen({ navigation }: { navigation: any }) {
   // Get user ID so we can populate screen
-  const { userID } = route.params;
+  // const { userID } = route.params;
 
   var date = "December 3, 2022";
 
@@ -86,21 +75,13 @@ function CalendarScreen({ navigation, route }: { navigation: any, route: any }) 
   const renderTodayItem = ({ item }: { item: any }) =>
     // Checks if the dates on the data line up with the user-input one
     item.date == date ? (
-      <Item
-        name={item.name}
-        date={item.date}
-        time={item.time}
-      />
+      <Item name={item.name} date={item.date} time={item.time} />
     ) : null;
 
-    const renderUpcomingItem = ({ item }: { item: any }) =>
+  const renderUpcomingItem = ({ item }: { item: any }) =>
     // Checks if the dates on the data line up with the user-input one
     item.date != date ? (
-      <Item
-        name={item.name}
-        date={item.date}
-        time={item.time}
-      />
+      <Item name={item.name} date={item.date} time={item.time} />
     ) : null;
 
   return (
@@ -109,43 +90,36 @@ function CalendarScreen({ navigation, route }: { navigation: any, route: any }) 
         // Every other part of the screen
         style={styles.background}
       >
-        <View
-        style={styles.backButtonView}>
-            <TouchableOpacity
+        <View style={styles.backButtonView}>
+          <TouchableOpacity
             // Back button press functionality
             onPress={() => navigation.goBack()}
             style={styles.backButton}
-            >
+          >
             <Text
-                // The actual text content of the back button
-                style={styles.backButtonText}
+              // The actual text content of the back button
+              style={styles.backButtonText}
             >
-                &#8592;
+              &#8592;
             </Text>
-            </TouchableOpacity>
+          </TouchableOpacity>
         </View>
         <View
-        // For the "Today" section
-        style={styles.todayView}>
-          <Text
-          style={styles.todayUpcomingViewText}>
-            Today
-          </Text>
-          <FlatList data={DATA} renderItem={renderTodayItem}/>
-          <View
-          style={styles.vendorSelectionSpace}/>
+          // For the "Today" section
+          style={styles.todayView}
+        >
+          <Text style={styles.todayUpcomingViewText}>Today</Text>
+          <FlatList data={DATA} renderItem={renderTodayItem} />
+          <View style={styles.vendorSelectionSpace} />
         </View>
 
         <View
-        // For the "Upcoming" section
-        style={styles.upcomingView}>
-          <Text
-          style={styles.todayUpcomingViewText}>
-            Upcoming
-          </Text>
-          <FlatList data={DATA} renderItem={renderUpcomingItem}/>
+          // For the "Upcoming" section
+          style={styles.upcomingView}
+        >
+          <Text style={styles.todayUpcomingViewText}>Upcoming</Text>
+          <FlatList data={DATA} renderItem={renderUpcomingItem} />
         </View>
-
       </SafeAreaView>
     </Background>
   );

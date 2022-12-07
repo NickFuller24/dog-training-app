@@ -8,8 +8,10 @@ import {
   Pressable,
   TextInput,
   KeyboardAvoidingView,
+  Keyboard,
+  ScrollView
 } from "react-native";
-import styles from "../styles/SignInScreenStyles.js";
+import styles from "../styles/SignInScreenStyles";
 
 function SignInScreen({ navigation }: { navigation: any }) {
   const [email, setEmail] = useState("");
@@ -35,66 +37,83 @@ function SignInScreen({ navigation }: { navigation: any }) {
   }, [email, password]);
 
   return (
-    <KeyboardAvoidingView style={styles.background}>
-      <View style={styles.logoContainer}>
-        <Image
-          // style={styles.logoImage}
-          source={require("../assets/loginDogImage.png")}
-        />
-        <Text style={styles.logoText}>Train your dog!</Text>
+    <View style={styles.background}>
+      <Image 
+        source={require("../assets/dogWithStick.png")}
+        style={styles.image}
+      />
+      <View style={styles.whistleContainer}>
+        <Image source={require("../assets/whiteWhistle.png")}/>
+        <Text style={styles.whistleText}>
+          Dog Trainer App
+        </Text>
       </View>
-      <View style={styles.loginInfoContainer}>
-        {showLoginError ? (
-          <Text style={styles.loginError}>
-            Your email or password is incorrect. Please try again.
+      <ScrollView
+        contentContainerStyle={{ flexGrow: 1 }}
+        keyboardShouldPersistTaps="handled"
+        style={styles.bottomContainer}
+        scrollEnabled={false}
+      >
+        <View style={styles.headerContainer}>
+          <Text style={styles.headerText}>
+            Log-in
           </Text>
-        ) : null}
-        <TextInput
-          style={styles.loginUsernameTextInput}
-          placeholder={"Email"}
-          onChangeText={(email) => setEmail(email)}
-        />
-        <TextInput
-          secureTextEntry={true}
-          style={styles.loginPasswordTextInput}
-          placeholder={"Password"}
-          onChangeText={(password) => setPassword(password)}
-        />
-        <View style={styles.loginInfoDetailsContainer}>
-          <Pressable
-            style={[
-              styles.loginInfoDetailsRememberMeCheckbox,
-              rememberMeClicked
-                ? { backgroundColor: "blue" }
-                : { backgroundColor: "transparent" },
-            ]}
-            onPress={() => setRememberMeClicked(!rememberMeClicked)}
+        </View>
+        <View style={styles.inputContainer}>
+          <Text style={styles.inputHeader}>
+            Email
+          </Text>
+            <TextInput
+              style={styles.inputText}
+              placeholder="email address"
+              onChangeText={setEmail}
+              autoCapitalize="none"
+              keyboardType="email-address"
+              textContentType="emailAddress"
+            />
+          <Text style={styles.inputHeader}>
+            Password
+          </Text>
+          <TextInput
+            style={styles.inputText}
+            placeholder="password"
+            secureTextEntry
+            textContentType="password"
+            autoCapitalize="none"
+            onChangeText={setPassword}
           />
           <Pressable
-            style={styles.loginInfoDetailsRememberMe}
-            onPress={() => setRememberMeClicked(!rememberMeClicked)}
+            onPress={signIn}
+            style={styles.loginButton}
           >
-            <Text>Remember Me</Text>
+            <Text style={styles.loginButtonText}>
+              Login
+            </Text>
           </Pressable>
-          <Pressable style={styles.loginInfoDetailsForgotPassword}>
-            <Text>Forgot Password?</Text>
-          </Pressable>
+          <View style={styles.subHeaderContainer}>
+            <View style={styles.subHeaderLine}/>
+            <Text style={styles.subHeaderText}>
+              or log-in with
+            </Text>
+            <View style={styles.subHeaderLine}/>
+          </View>
+          <View style={styles.socialsContainer}>
+            <Pressable style={styles.socialLogoContainer}>
+              <Image
+                style={styles.socialLogo}
+                source={require("../assets/googleLogo.png")}
+              />
+            </Pressable>
+            <Pressable style={styles.socialLogoContainer}>
+              <Image
+                style={styles.socialLogo}
+                source={require("../assets/facebookLogo.png")}
+              />
+            </Pressable>
+          </View>
         </View>
-        <View style={styles.buttonSpace} />
-        <Pressable style={styles.signInGeneric} onPress={signIn}>
-          <Text style={styles.buttonText}>Sign In</Text>
-        </Pressable>
-      </View>
-      <View style={styles.signInWithContainer}>
-        <Pressable style={styles.signInWithFacebook}>
-          <Text style={styles.buttonText}>Sign In With Facebook</Text>
-        </Pressable>
-        <View style={styles.buttonSpace} />
-        <Pressable style={styles.signInWithGoogle}>
-          <Text style={styles.buttonText}>Sign In With Google</Text>
-        </Pressable>
-      </View>
-    </KeyboardAvoidingView>
+      </ScrollView>
+    </View>
   );
 }
 

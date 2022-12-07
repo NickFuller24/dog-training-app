@@ -10,7 +10,7 @@ const styles = StyleSheet.create({
     fontSize: scale(40),
   },
   backButtonView: {
-    padding: scale(15)
+    padding: scale(15),
   },
   background: {
     alignItems: "stretch",
@@ -47,13 +47,13 @@ const styles = StyleSheet.create({
   todayUpcomingViewText: {
     color: "#FFFFFF",
     fontSize: scale(40),
-    fontWeight: "bold"
+    fontWeight: "bold",
   },
   todayView: {
-    paddingHorizontal: scale(30)
+    paddingHorizontal: scale(30),
   },
   upcomingView: {
-    paddingHorizontal: scale(30)
+    paddingHorizontal: scale(30),
   },
   vendorSelectionItem: {
     backgroundColor: "#D9D9D9",
@@ -64,19 +64,17 @@ const styles = StyleSheet.create({
   vendorSelectionItemTextContainer: {
     padding: scale(10),
   },
-  vendorSelectionItemTextContainerDate: {
-  },
+  vendorSelectionItemTextContainerDate: {},
   vendorSelectionItemTextContainerInner: {
     flexDirection: "row",
     justifyContent: "space-between",
-    paddingTop: scale(10)
+    paddingTop: scale(10),
   },
   vendorSelectionItemTextContainerName: {
     fontSize: scale(15),
     fontWeight: "bold",
   },
-  vendorSelectionItemTextContainerTime: {
-  },
+  vendorSelectionItemTextContainerTime: {},
   vendorSelectionSpace: {
     height: verticalScale(20),
   },

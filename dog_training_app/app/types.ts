@@ -81,10 +81,4 @@ export type Service = {
 };
 
 // Beginning of all icon import strings
-export type icon = 
-  "Home" |
-  "Calendar" |
-  "Book" |
-  "Inbox" |
-  "Profile"
-;
+export type icon = "Home" | "Calendar" | "Book" | "Inbox" | "Profile";

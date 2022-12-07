@@ -55,7 +55,16 @@ const testUser: User = {
   },
 };
 
-function ProfileScreen({ navigation }: { navigation: any }) {
+function ProfileScreen({
+  route,
+  navigation
+ }: {
+   route: any,
+   navigation: any
+}) {
+  // Get user ID so we can populate screen
+  const { userID } = route.params;
+
   return (
     <Background>
       <Image
@@ -76,7 +85,7 @@ function ProfileScreen({ navigation }: { navigation: any }) {
           />
         </TouchableOpacity>
       </View>
-      <Navbar selected={"Profile"} navigation={navigation}/>
+      <Navbar selected={"Profile"} userID={userID} navigation={navigation} />
     </Background>
   );
 }
