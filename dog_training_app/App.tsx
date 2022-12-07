@@ -20,7 +20,8 @@ const Stack = createNativeStackNavigator();
 
 const App = () => {
   const [fontsLoaded] = useFonts({
-    'Inter': require('./app/assets/fonts/Inter.ttf'),
+    'Inter-Regular': require('./app/assets/fonts/Inter-Regular.otf'),
+    'Inter-Bold': require('./app/assets/fonts/Inter-Bold.otf'),
     'Gelasio-Regular': require('./app/assets/fonts/Gelasio-Regular.ttf'),
     'Gelasio-Bold': require('./app/assets/fonts/Gelasio-Bold.ttf'),
   });
