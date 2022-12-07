@@ -1,6 +1,6 @@
 import { ConsoleLogger } from "@aws-amplify/core";
 import React, { useState } from "react";
-import { View, Image, Text, Pressable, TextInput } from "react-native";
+import { View, Image, Text, Pressable, TextInput, ScrollView } from "react-native";
 import { auth } from "../../firebaseConfig";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import styles from "../styles/CreateAccountScreenStyles";
@@ -17,7 +17,7 @@ function CreateAccountScreen({ navigation }: { navigation: any }) {
         // Signed in
         const user = userCredential.user;
         console.log(user);
-        navigation.navigate("Home");
+        navigation.navigate("Home", { userID: user.uid });
         // ...
       })
       .catch((error) => {
@@ -29,71 +29,79 @@ function CreateAccountScreen({ navigation }: { navigation: any }) {
 
   return (
     <View style={styles.background}>
-      <View style={styles.logoContainer}>
-        <Image
-          // style={styles.logoImage}
-          source={require("../assets/loginDogImage.png")}
-        />
-        <Text style={styles.logoText}>Train your dog!</Text>
+      <Image 
+        source={require("../assets/dogWithStick.png")}
+        style={styles.image}
+      />
+      <View style={styles.whistleContainer}>
+        <Image source={require("../assets/whiteWhistle.png")}/>
+        <Text style={styles.whistleText}>
+          Dog Trainer App
+        </Text>
       </View>
-      <View style={styles.signUpInfoContainer}>
-        {/* <TextInput
-                style={styles.signUpFullnameTextInput}
-                placeholder={"Full Name"}
-                onChangeText={fullname => setFullname(fullname)}>
-                </TextInput> */}
-        <TextInput
-          style={styles.signUpUsernameTextInput}
-          placeholder={"Email"}
-          onChangeText={(email) => setEmail(email)}
-        />
-        <TextInput
-          style={styles.signUpPasswordTextInput}
-          placeholder={"Password"}
-          onChangeText={(password) => setPassword(password)}
-        />
-        <View style={styles.buttonSpace} />
-        <View style={styles.signUpUserTrainerContainer}>
-          <Pressable
-            style={[
-              styles.signUpUserButton,
-              userButton
-                ? { backgroundColor: "pink" }
-                : { backgroundColor: "lightgray" },
-            ]}
-            onPress={() => setUserButton(true)}
-          >
-            <Text style={styles.signUpUserButtonText}>User</Text>
-          </Pressable>
-          <Pressable
-            style={[
-              styles.signUpTrainerButton,
-              userButton
-                ? { backgroundColor: "lightgray" }
-                : { backgroundColor: "pink" },
-            ]}
-            onPress={() => setUserButton(false)}
-          >
-            <Text style={styles.signUpTrainerButtonText}>Trainer</Text>
-          </Pressable>
+      <ScrollView
+        contentContainerStyle={{ flexGrow: 1 }}
+        keyboardShouldPersistTaps="handled"
+        style={styles.bottomContainer}
+        scrollEnabled={false}
+      >
+        <View style={styles.headerContainer}>
+          <Text style={styles.headerText}>
+            Create Account
+          </Text>
         </View>
-        <Pressable
-          style={styles.signUpGeneric}
-          // ***Where authentication comes in, on this onPress. Check user data / register account***
-          onPress={createAccount}
-        >
-          <Text style={styles.buttonText}>Create Account</Text>
-        </Pressable>
-      </View>
-      <View style={styles.signUpWithContainer}>
-        <Pressable style={styles.signUpWithFacebook}>
-          <Text style={styles.buttonText}>Sign Up With Facebook</Text>
-        </Pressable>
-        <View style={styles.buttonSpace} />
-        <Pressable style={styles.signUpWithGoogle}>
-          <Text style={styles.buttonText}>Sign Up With Google</Text>
-        </Pressable>
-      </View>
+        <View style={styles.inputContainer}>
+          <Text style={styles.inputHeader}>
+            Email
+          </Text>
+            <TextInput
+              style={styles.inputText}
+              placeholder="email address"
+              onChangeText={setEmail}
+              autoCapitalize="none"
+              keyboardType="email-address"
+              textContentType="emailAddress"
+            />
+          <Text style={styles.inputHeader}>
+            Password
+          </Text>
+          <TextInput
+            style={styles.inputText}
+            placeholder="password"
+            secureTextEntry
+            textContentType="password"
+            autoCapitalize="none"
+            onChangeText={setPassword}
+          />
+          <Pressable
+            onPress={createAccount}
+            style={styles.loginButton}
+          >
+            <Text style={styles.loginButtonText}>
+              Create Account
+            </Text>
+          </Pressable>
+          <View style={styles.subHeaderContainer}>
+            <View style={styles.subHeaderLine}/>
+            <Text style={styles.subHeaderText}>
+              or create an account with
+            </Text>
+            <View style={styles.subHeaderLine}/>
+          </View>
+          <View style={styles.socialsContainer}>
+            <Pressable style={styles.socialLogoContainer}>
+              <Image
+                source={require("../assets/googleLogo.png")}
+              />
+            </Pressable>
+            <Pressable style={styles.socialLogoContainer}>
+              <Image
+                source={require("../assets/facebookLogo.png")}
+              />
+            </Pressable>
+          </View>
+        </View>
+      </ScrollView>
     </View>
   );
 }
